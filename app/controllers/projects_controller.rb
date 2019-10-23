@@ -1,19 +1,19 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = User.all
+    @projects = Project.all
   end
 
   def show
-    @user = User.find(params(:id))
+    @project = Project.find(params(:id))
   end
 
   def new
-    @user = User.new
+    @project = Project.new
   end
 
   def create
-    @user = User.new(projects_params)
-    if @user.save
+    @project = Project.new(projects_params)
+    if @project.save
       redirect_to projects
     else
       render :new
@@ -21,21 +21,21 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(projects_params)
-      redirect_to @user
+    @project = Project.find(params[:id])
+    if @project.update(projects_params)
+      redirect_to @project
     else
       render :edit
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
-    if @user.destroy
+    @project = Project.find(params[:id])
+    if @project.destroy
       redirect_to projects
     else
       redirect_to(:back)
