@@ -1,0 +1,24 @@
+<%# if current_user.admin? %>
+  <div class="project-card-dashboard-wrapper">
+    <div class="buttons">
+      <!-- create new project button -->
+      <div class="callguru-button"><%= link_to 'create new project', new_project_path %></div>
+      <div class="callguru-button just-border icon">
+        <i class="fas fa-filter"></i>
+        <p>Filter</p>
+      </div>
+    </div>
+    <% @projects.each do |project| %>
+      <%= render 'shared/project_card_dashboard', project: project %>
+    <% end %>
+  </div>
+<!-- <%# else %>
+  <div class="project-card-call-wrapper">
+    <p>start a call</p>
+    <%# @projects.each do |project| %>
+      <div class="project_card_call">
+        <p><%#= project.name %></p>
+      </div>
+    <%# end %>
+  </div>
+<%# end %> -->

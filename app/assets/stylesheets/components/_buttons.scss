@@ -1,0 +1,41 @@
+.callguru-button{
+  width: fit-content;
+  padding: 4px 15px;
+  background-color: #F51964;
+  border: 1px solid $callguru;
+  border-radius: 4px;
+  color: white;
+  a{
+    text-decoration: none;
+  }
+  p{
+    margin: 0
+  }
+}
+
+.callguru-button:hover{
+  background-color: #e9125b;
+  border: 1px solid #e9125b;
+  color: white;
+}
+
+.callguru-button.just-border{
+  background: transparent;
+  color: $callguru;
+}
+
+.callguru-button.just-border:hover{
+  border: 1px solid #e9125b;
+  color: #e9125b;
+}
+
+.callguru-button.just-border.icon{
+  display: flex;
+  align-items: center;
+  color: $callguru;
+  i{
+    width: 16px;
+    height: 16px;
+    margin-right: 15px;
+  }
+}

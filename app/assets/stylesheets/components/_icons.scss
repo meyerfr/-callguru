@@ -1,0 +1,15 @@
+.objection-icon{
+  width: 15px;
+  height: 15px;
+  border: 1px solid #F51964;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2px;
+  .objection-icon-text{
+    font-size: 12px;
+    margin: 0;
+    color: #F51964;
+  }
+}
