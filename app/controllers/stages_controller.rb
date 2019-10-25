@@ -45,6 +45,6 @@ class StagesController < ApplicationController
   private
 
   def stages_params
-    params.require(:stages).permit(:first_name, :last_name, :email)
+    params.require(:stage).permit(:name)
   end
 end

@@ -45,6 +45,6 @@ class ScriptsController < ApplicationController
   private
 
   def scripts_params
-    params.require(:scripts).permit(:first_name, :last_name, :email)
+    params.require(:script).permit(:name, :text)
   end
 end
