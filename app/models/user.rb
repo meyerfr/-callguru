@@ -3,7 +3,7 @@ class User < ApplicationRecord
   belongs_to :company
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :invitable, :database_authenticatable,
+  devise :session_limitable, :invitable, :database_authenticatable,
          :recoverable, :rememberable, :validatable, invite_for: 3.days
 
   def admin?

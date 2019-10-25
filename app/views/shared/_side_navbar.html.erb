@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.admin? %>
   <div class="callguru-navbar">
     <%= link_to root_path, class: "callguru-brand" do %>
       <%= image_tag "callguru_logo.png" %>
