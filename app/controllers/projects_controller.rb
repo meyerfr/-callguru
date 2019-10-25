@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  # skip_before_action :authenticate_user!
+  before_action :check_sign_in!
   def index
     @projects = Project.all
   end
@@ -45,6 +47,6 @@ class ProjectsController < ApplicationController
   private
 
   def projects_params
-    params.require(:projects).permit(:first_name, :last_name, :email)
+    params.require(:project).permit(:name, :goal)
   end
 end
