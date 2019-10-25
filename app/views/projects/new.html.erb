@@ -1,0 +1,18 @@
+<div class="callguru-upper-navbar">
+  <div class="center-text">
+    <h2>Create new Project</h2>
+  </div>
+  <div class="buttons">
+    <%= link_to 'Cancel', '#', class: 'callguru-button just-border' %>
+    <%= link_to 'Save as Draft', '#', class: 'callguru-button' %>
+  </div>
+</div>
+<div class="padding-upper-navbar">
+  <div class="form-wrapper">
+    <%= simple_form_for(@project) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :goal %>
+      <%= f.button :submit, 'create Project', class: 'callguru-button' %>
+    <% end %>
+  </div>
+</div>

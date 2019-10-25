@@ -1,12 +1,105 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.callguru-navbar{
+  width: 210px;
   background: white;
+  height: 100%;
+  z-index: 1;
+  overflow-x: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0px 3px rgba(0, 0, 0, 0.1);
+  .callguru-brand{
+    margin: 25px 0 5px 0;
+    align-self: center;
+    img{
+      width: 130px;
+    }
+  }
+  .callguru-navbar-items{
+    align-self: center;
+    width: 100%;
+    .navbar-item{
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      padding-left: 40px;
+      position: relative;
+      i{
+        color: $callguru;
+        font-size: 15px;
+        height: 15px;
+        width: 15px;
+      }
+      p{
+        margin: 0 0 0 15px;
+        font-size: 18px;
+      }
+      a{
+        position: absolute;
+        width: calc(100% - 40px);
+        height: 100%;
+      }
+    }
+    .active{
+      border-left: 3px solid $callguru;
+      p{
+        color: $callguru;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.padding-navbar{
+  padding-left: 210px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.padding-navbar.no-padding{
+  padding: 0;
 }
+
+.callguru-upper-navbar{
+  width: calc(100% - 210px);
+  height: 65px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  color: $callguru;
+  position: fixed;
+  z-index: 1;
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+  p{
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+  }
+  .buttons{
+    position: absolute;
+    right: 25px;
+    a:last-child{
+      margin-left: 20px;
+    }
+  }
+  .center-text{
+    width: calc(100% - 251px);
+    text-align: center;
+  }
+}
+
+.padding-upper-navbar{
+  padding-top: 65px;
+}
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }

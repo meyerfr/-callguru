@@ -1,0 +1,12 @@
+.simple_form{
+  .form-group{
+    .form-control{
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+    .form-control:focus{
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.5);
+      color: black;
+    }
+  }
+}
