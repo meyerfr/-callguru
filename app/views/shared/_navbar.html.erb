@@ -7,7 +7,7 @@
       <div class="navbar-item active">
         <i class="fab fa-react"></i>
         <p>Projects</p>
-        <%= link_to '', projects_path %>
+        <%= link_to '', user_projects_path %>
       </div>
       <div class="navbar-item">
         <i class="fas fa-users"></i>
@@ -42,7 +42,7 @@
 
 <% if user_signed_in? %>
   <% if current_user.admin? || current_user.superadmin? %>
-    <%= render 'side_navbar' %>
+    <%= render 'shared/side_navbar' %>
   <% else %>
     <div class="navbar navbar-expand-sm navbar-light callguru-navbar-agent">
       <%= link_to root_path, class: "callguru-brand" do %>
@@ -93,3 +93,5 @@
     </div>
   </div>
 <% end %>
+
+<%= render 'shared/side_navbar' %>

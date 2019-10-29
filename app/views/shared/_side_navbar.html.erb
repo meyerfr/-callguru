@@ -7,7 +7,7 @@
       <div class="navbar-item active">
         <i class="fab fa-react"></i>
         <p>Projects</p>
-        <%= link_to '', projects_path %>
+        <%= link_to '', user_projects_path(current_user.id) %>
       </div>
       <div class="navbar-item">
         <i class="fas fa-users"></i>

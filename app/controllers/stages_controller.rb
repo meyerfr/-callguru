@@ -14,7 +14,7 @@ class StagesController < ApplicationController
   def create
     @stage = Stage.new(stages_params)
     if @stage.save
-      redirect_to stages
+      redirect_to project_stages(@project)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class StagesController < ApplicationController
   def destroy
     @stage = Stage.find(params[:id])
     if @stage.destroy
-      redirect_to stages
+      redirect_to project_stages(@project)
     else
       redirect_to(:back)
     end
@@ -46,5 +46,9 @@ class StagesController < ApplicationController
 
   def stages_params
     params.require(:stage).permit(:name)
+  end
+
+  def find_project
+    @project = Project.find(params[:project_id])
   end
 end

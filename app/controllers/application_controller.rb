@@ -24,4 +24,10 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_path, alert: "You have to LogIn first" unless
       user_signed_in?
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:first_name, :last_name, :email, :role)
+    end
+  end
 end
