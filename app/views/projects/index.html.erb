@@ -15,13 +15,13 @@
     </div>
   </div>
 <% else %>
-  <div class="project-card-agent-wrapper no-footer">
+  <div class="project-card-wrapper no-footer">
     <h4>start a call</h4>
-    <div class="project-card-agent-controller">
+    <div class="project-card-controller">
       <% @projects.each do |project| %>
-        <div class="project-card-call">
+        <div class="project-card">
           <%= project.name %>
-          <p class="goal">goal: <%= project.goal %></p>
+          <p class="text">goal: <%= project.goal %></p>
         </div>
       <% end %>
     </div>

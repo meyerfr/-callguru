@@ -1,0 +1,16 @@
+<div class="project-card-wrapper">
+  <h4>Blueprint</h4>
+  <div class="project-card-controller">
+    <% @projects.each do |project| %>
+      <div class="project-card">
+        <p><%= project.name %></p>
+        <% stages = Stage.all.where(project_id: project.id) %>
+        <% if stages %>
+          <% stages.each do |stage| %>
+            <p class="text"><%= stage.name %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

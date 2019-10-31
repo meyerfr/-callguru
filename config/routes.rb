@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/setting'
   get '/patients/:id', to: 'patients#show', as: 'patient'
   get 'pages/change_sign_in_as/:user_id', to: 'pages#change_sign_in_as', as: 'change_sign_in_as'
+  get 'pages/blueprint'
   devise_for :users, skip: [:sessions]
   as :user do
     get 'sign_in/:signed_in_as', to: 'users/sessions#new', as: :new_user_session

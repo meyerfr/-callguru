@@ -18,4 +18,8 @@ class PagesController < ApplicationController
       user.update(signed_in_as: 'user')
     end
   end
+
+  def blueprint
+    @projects = Project.all
+  end
 end
