@@ -5,12 +5,17 @@
   border: 1px solid $callguru;
   border-radius: 4px;
   color: white;
+  text-decoration: none;
   a{
     text-decoration: none;
   }
   p{
     margin: 0
   }
+}
+
+a.callguru-button{
+  text-decoration: none;
 }
 
 .callguru-button:hover{
