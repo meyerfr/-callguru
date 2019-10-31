@@ -14,7 +14,7 @@ class ScriptsController < ApplicationController
   def create
     @script = Script.new(scripts_params)
     if @script.save
-      redirect_to scripts
+      redirect_to section_script_path(@section.id)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class ScriptsController < ApplicationController
   def destroy
     @script = Script.find(params[:id])
     if @script.destroy
-      redirect_to scripts
+      redirect_to section_script_path(@section.id)
     else
       redirect_to(:back)
     end
@@ -46,5 +46,9 @@ class ScriptsController < ApplicationController
 
   def scripts_params
     params.require(:script).permit(:name, :text)
+  end
+
+  def find_section
+    @section = Section.find(params[:section_id])
   end
 end

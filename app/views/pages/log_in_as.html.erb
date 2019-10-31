@@ -1,0 +1,11 @@
+<div class="choose-login-wrapper">
+  <div class="header">
+    <h2>Welcome to</h2>
+    <%= image_tag "callguru_logo.png" %>
+  </div>
+  <div class="buttons">
+    <%= link_to 'Enter Callguru as am Agent', new_user_session_path(signed_in_as: 'user'), class: 'callguru-button' %>
+    <p>or</p>
+    <%= link_to 'as a Manager', new_user_session_path(signed_in_as: 'admin'), class: 'just-text' %>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.choose-login-wrapper{
+  position: absolute;
+  right: calc(50% - 166px);
+  top: calc(50% - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header{
+    display: flex;
+    align-items: center;
+    h2{
+      font-size: 35px;
+      margin: 0;
+    }
+    img{
+      height: 42px;
+      padding-left: 10px;
+    }
+  }
+  .buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    .just-text{
+      text-decoration: none;
+      color: black;
+    }
+    p{
+      font-weight: lighter;
+      margin: 0 5px;
+    }
+  }
+}

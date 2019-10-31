@@ -14,7 +14,7 @@ class SectionsController < ApplicationController
   def create
     @section = Section.new(sections_params)
     if @section.save
-      redirect_to sections
+      redirect_to stage_sections(@stage)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class SectionsController < ApplicationController
   def destroy
     @section = Section.find(params[:id])
     if @section.destroy
-      redirect_to sections
+      redirect_to stage_sections(@stage)
     else
       redirect_to(:back)
     end
@@ -46,5 +46,9 @@ class SectionsController < ApplicationController
 
   def sections_params
     params.require(:section).permit(:name)
+  end
+
+  def find_stage
+    @stage = Stage.find(params[:stage_id])
   end
 end
