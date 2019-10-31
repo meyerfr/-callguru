@@ -1,0 +1,22 @@
+.project-card-agent-wrapper{
+  padding: 15px 50px;
+  h4{
+    padding-left: 14px;
+    font-size: 18px;
+    color: $callguru;
+  }
+  .project-card-agent-controller{
+    .project-card-call{
+      background-color: white;
+      padding: 8px 14px;
+      margin: 10px 0px;
+      font-size: 15px;
+      font-weight: 600;
+      .goal{
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+  }
+}

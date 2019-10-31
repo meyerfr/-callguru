@@ -1,5 +1,5 @@
 <% if current_user.admin? %>
-  <div class="project-card-dashboard-wrapper">
+  <p class="project-card-dashboard-wrapper">
     <div class="buttons">
       <!-- create new project button -->
       <div class="callguru-button"><%= link_to 'create new project', new_user_project_path %></div>
@@ -13,12 +13,15 @@
     <% end %>
   </div>
 <% else %>
-  <div class="project-card-call-wrapper">
-    <p>start a call</p>
-    <% @projects.each do |project| %>
-      <div class="project_card_call">
-        <%= project.name %>
-      </div>
-    <% end %>
+  <div class="project-card-agent-wrapper no-footer">
+    <h4>start a call</h4>
+    <div class="project-card-agent-controller">
+      <% @projects.each do |project| %>
+        <div class="project-card-call">
+          <%= project.name %>
+          <p class="goal">goal: <%= project.goal %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
