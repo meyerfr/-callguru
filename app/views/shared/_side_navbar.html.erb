@@ -1,44 +1,43 @@
-<% if user_signed_in? && current_user.admin? %>
-  <div class="callguru-navbar">
-    <%= link_to root_path, class: "callguru-brand" do %>
-      <%= image_tag "callguru_logo.png" %>
-    <% end %>
-    <div class="callguru-navbar-items">
-      <div class="navbar-item active">
-        <i class="fab fa-react"></i>
-        <p>Projects</p>
-        <%= link_to '', user_projects_path(current_user.id) %>
+<div class="callguru-navbar">
+  <%= link_to root_path, class: "callguru-brand" do %>
+    <%= image_tag "callguru_logo.png" %>
+  <% end %>
+  <div class="callguru-navbar-items">
+    <div class="navbar-item active">
+      <i class="fab fa-react"></i>
+      <p>Projects</p>
+      <%= link_to '', user_projects_path(current_user.id) %>
+    </div>
+    <div class="navbar-item">
+      <i class="fas fa-users"></i>
+      <p>Agents</p>
+      <%= link_to '', '#' %>
+    </div>
+    <div class="navbar-item">
+      <i class="far fa-chart-bar"></i>
+      <p>Analytics</p>
+      <%= link_to '', '#' %>
+    </div>
+    <div class="navbar-item">
+      <div class="objection-icon">
+        <div class="objection-icon-text">!</div>
       </div>
-      <div class="navbar-item">
-        <i class="fas fa-users"></i>
-        <p>Agents</p>
-        <%= link_to '', '#' %>
-      </div>
-      <div class="navbar-item">
-        <i class="far fa-chart-bar"></i>
-        <p>Analytics</p>
-        <%= link_to '', '#' %>
-      </div>
-      <div class="navbar-item">
-        <div class="objection-icon">
-          <div class="objection-icon-text">!</div>
-        </div>
-        <p>Objections</p>
-        <%= link_to '', '#' %>
-      </div>
-      <div class="navbar-item">
-        <i class="fas fa-book"></i>
-        <p>Wiki</p>
-        <%= link_to '', '#' %>
-      </div>
-      <div class="navbar-item">
-        <i class="fas fa-cog"></i>
-        <p>Settings</p>
-        <%= link_to '', '#' %>
-      </div>
+      <p>Objections</p>
+      <%= link_to '', '#' %>
+    </div>
+    <div class="navbar-item">
+      <i class="fas fa-book"></i>
+      <p>Wiki</p>
+      <%= link_to '', '#' %>
+    </div>
+    <div class="navbar-item">
+      <i class="fas fa-cog"></i>
+      <p>Settings</p>
+      <%= link_to '', '#' %>
     </div>
   </div>
-<% end %>
+</div>
+
 <!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%#= link_to "#", class: "navbar-brand" do %>
     <%#= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>

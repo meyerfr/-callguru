@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def users_params
-    params.require(:user).permit(:first_name, :last_name, :email)
+    params.require(:user).permit(:first_name, :last_name, :email, :role, :signed_in_as)
   end
 
   def find_company

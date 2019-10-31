@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def log_in_as
   end
+
+  def setting
+  end
 end

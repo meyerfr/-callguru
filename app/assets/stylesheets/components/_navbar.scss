@@ -103,3 +103,86 @@
 .callguru-navbar-agent .callguru-brand img {
   width: 100px;
 }
+
+/* Basic navbar item */
+// .callguru-navbar-item {
+//   cursor: pointer;
+//   padding: 0 20px;
+//   color: white;
+// }
+
+/* Dropdown menu */
+.navbar-callguru-dropdown-menu{
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+}
+.navbar-callguru-dropdown-menu li > a{
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999999 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  padding: 10px 20px;
+}
+.navbar-callguru-dropdown-menu li > a:hover{
+  background: transparent !important;
+  color: black !important;
+}
+.navbar-callguru-dropdown-menu:before{
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
+}
+
+
+.avatar-placeholder {
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p{
+    margin: 0;
+  }
+}
+
+// .callguru-navbar-md-lg.dropdown-menu.dropdown-menu-right{
+//   display: block;
+// }
+
+.navbar-expand .navbar-toggler{
+  display: block;
+}
+
+.navbar-light .navbar-toggler{
+  border: none;
+}
+
+.callguru-navbar-toggler{
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+// @media (min-width: 576px){
+//   .navbar-expand-sm .navbar-toggler {
+//       display: block;
+//       border: none;
+//   }
+//   .navbar-expand-sm .navbar-toggler:focus{
+//       display: block;
+//       border: none;
+//   }
+// }
+

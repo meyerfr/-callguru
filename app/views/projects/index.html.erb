@@ -1,4 +1,4 @@
-<%# if current_user.admin? %>
+<% if current_user.admin? %>
   <div class="project-card-dashboard-wrapper">
     <div class="buttons">
       <!-- create new project button -->
@@ -12,13 +12,13 @@
       <%= render 'shared/project_card_dashboard', project: project %>
     <% end %>
   </div>
-<!-- <%# else %>
+<% else %>
   <div class="project-card-call-wrapper">
     <p>start a call</p>
-    <%# @projects.each do |project| %>
+    <% @projects.each do |project| %>
       <div class="project_card_call">
-        <p><%#= project.name %></p>
+        <%= project.name %>
       </div>
-    <%# end %>
+    <% end %>
   </div>
-<%# end %> -->
+<% end %>
