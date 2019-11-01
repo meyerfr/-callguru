@@ -17,6 +17,7 @@ class PagesController < ApplicationController
     elsif user.signed_in_as == 'admin'
       user.update(signed_in_as: 'user')
     end
+    redirect_to :root
   end
 
   def blueprint
