@@ -13,15 +13,19 @@ const changeActiveClass = (event) => {
 
 function addNavbarItemActive() {
   const correctTarget = document.querySelector('.' + sessionStorage.correctTarget);
-  correctTarget.classList.add('active');
+  if (correctTarget) {
+    correctTarget.classList.add('active');
+  } else{
+    document.querySelector('.projects').classList.add('active')
+  }
 };
 
 function addEventListenerToNavbarItems() {
   const navbarItems = document.querySelectorAll('.navbar-item');
   const paddingNavbar = document.querySelector('.padding-navbar');
   if (navbarItems.length > 0) {
-    addNavbarItemActive();
     if (paddingNavbar.classList.contains('no-padding-left')) {paddingNavbar.classList.remove('no-padding-left');};
+    addNavbarItemActive();
     navbarItems.forEach((navbarItem) => {
       navbarItem.addEventListener('click', changeActiveClass);
     });
