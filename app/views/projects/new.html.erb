@@ -9,7 +9,7 @@
 </div>
 <div class="padding-upper-navbar">
   <div class="form-wrapper">
-    <%= simple_form_for(@project) do |f| %>
+    <%= simple_form_for([@user, @project]) do |f| %>
       <%= f.input :name %>
       <%= f.input :goal %>
       <%= f.button :submit, 'create Project', class: 'callguru-button' %>
