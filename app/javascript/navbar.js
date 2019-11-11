@@ -1,22 +1,10 @@
-const changeActiveClass = (event) => {
-  const navbarItems = document.querySelectorAll('.navbar-item');
-  sessionStorage.setItem('correctTarget', event.currentTarget.classList[1]);
-  if (!event.currentTarget.classList.contains('active')) {
-    navbarItems.forEach((navbarItem) => {
-      if (navbarItem.classList.contains('active')) {
-        navbarItem.classList.remove('active')
-      };
-    });
-    event.currentTarget.classList.add('active');
-  };
-}
-
 function addNavbarItemActive() {
-  const correctTarget = document.querySelector('.' + sessionStorage.correctTarget);
-  if (correctTarget) {
-    correctTarget.classList.add('active');
-  } else{
+  const href = window.location.href.replace('http://localhost:3000/', '');
+  if (href == 'users/1/projects' || href == '') {
     document.querySelector('.projects').classList.add('active')
+    // correctTarget.classList.add('active');
+  } else if (href == 'pages/setting'){
+    document.querySelector('.settings').classList.add('active');
   }
 };
 
@@ -27,7 +15,14 @@ function addEventListenerToNavbarItems() {
     if (paddingNavbar.classList.contains('no-padding-left')) {paddingNavbar.classList.remove('no-padding-left');};
     addNavbarItemActive();
     navbarItems.forEach((navbarItem) => {
-      navbarItem.addEventListener('click', changeActiveClass);
+      navbarItem.addEventListener('mousedown', function() {
+        navbarItems.forEach((navbarItem) => {
+          if (navbarItem.classList.contains('active')) {
+            navbarItem.classList.remove('active')
+          };
+        });
+        navbarItem.classList.add('active');
+      });
     });
   } else {
     if (!paddingNavbar.classList.contains('no-padding-left')) {paddingNavbar.classList.add('no-padding-left');};
