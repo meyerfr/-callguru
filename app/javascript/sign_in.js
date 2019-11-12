@@ -17,6 +17,7 @@ function signInAs() {
     const loginWrapper = document.querySelector('.login-wrapper');
     const agentButton = document.querySelector('.agent-button');
     const managerButton = document.querySelector('.manager-button');
+    const loginButton = document.querySelector('.login-button');
     agentButton.addEventListener('click', function(){
       sessionStorage.setItem('tried_sign_in', 'true');
       triedSignIn();
@@ -26,6 +27,10 @@ function signInAs() {
       sessionStorage.setItem('tried_sign_in', 'true');
       triedSignIn();
       document.querySelector('.user_signed_in_as').lastElementChild.value = 'admin';
+    });
+    loginButton.addEventListener('click', function(){
+      sessionStorage.removeItem('tried_sign_in');
+      triedSignIn();
     });
   };
 };
