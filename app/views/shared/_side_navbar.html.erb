@@ -3,37 +3,37 @@
     <%= image_tag "callguru_logo.png" %>
   <% end %>
   <div class="callguru-navbar-items">
-    <div class="navbar-item active">
+    <div class="navbar-item projects">
       <i class="fab fa-react"></i>
       <p>Projects</p>
       <%= link_to '', user_projects_path(current_user.id) %>
     </div>
-    <div class="navbar-item">
+    <div class="navbar-item agents">
       <i class="fas fa-users"></i>
       <p>Agents</p>
       <%= link_to '', '#' %>
     </div>
-    <div class="navbar-item">
+    <div class="navbar-item analytics">
       <i class="far fa-chart-bar"></i>
       <p>Analytics</p>
       <%= link_to '', '#' %>
     </div>
-    <div class="navbar-item">
+    <div class="navbar-item objections">
       <div class="objection-icon">
         <div class="objection-icon-text">!</div>
       </div>
       <p>Objections</p>
       <%= link_to '', '#' %>
     </div>
-    <div class="navbar-item">
+    <div class="navbar-item wiki">
       <i class="fas fa-book"></i>
       <p>Wiki</p>
       <%= link_to '', '#' %>
     </div>
-    <div class="navbar-item">
+    <div class="navbar-item settings">
       <i class="fas fa-cog"></i>
       <p>Settings</p>
-      <%= link_to '', '#' %>
+      <%= link_to '', pages_setting_path %>
     </div>
   </div>
 </div>

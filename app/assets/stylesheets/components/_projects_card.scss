@@ -1,0 +1,60 @@
+.project-card-wrapper{
+  display: flex;
+  .project-card-container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 160px;
+    background-color: white;
+    margin: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    .project-card-shortcuts{
+      height: 20px;
+      width: 100%;
+      position: relative;
+      i{font-size: 15px;}
+      .position-absolute{
+        right: 10px;
+        i{
+          color: $callguru;
+          margin-right: 6px;
+        }
+      }
+    }
+    .project-card-header{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p{
+        margin: 0;
+        color: $callguru;
+        font-size: 18px;
+      }
+    }
+    .project-card-footer{
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      width: 100%;
+      position: relative;
+      padding: 5px 0;
+      border-top: 1px solid lightgray;
+      p{
+        margin: 0;
+        font-size: 13px;
+        color: $callguru;
+      }
+      i{
+        position: absolute;
+        right: 25px;
+        top: calc(50% - 7px);
+        color: $callguru;
+      }
+    }
+  }
+}

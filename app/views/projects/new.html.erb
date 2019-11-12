@@ -8,11 +8,32 @@
   </div>
 </div>
 <div class="padding-upper-navbar">
-  <div class="form-wrapper">
-    <%= simple_form_for(@project) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :goal %>
-      <%= f.button :submit, 'create Project', class: 'callguru-button' %>
-    <% end %>
+  <div class="new-wrapper d-flex">
+    <div class="form-wrapper">
+      <%= simple_form_for([@user, @project]) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :goal, wrapper_html: { class: 'd-none' } %>
+        <%= f.button :submit, 'create Project', class: 'callguru-button' %>
+      <% end %>
+    </div>
+    <div class="agent-interface-wrapper">
+      <p class="preview">Agent Interface Preview</p>
+      <div class="agent-interface-container">
+        <div class="navbar callguru-navbar-agent">
+          <%= image_tag "callguru_logo.png", class: 'callguru-brand' %>
+        </div>
+        <div class="project-card-wrapper agent">
+          <h4>start a call</h4>
+          <div class="project-card-controller">
+            <% @projects.each do |project| %>
+              <div class="project-card">
+                <%= project.name %>
+                <p class="text">goal: <%= project.goal %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
