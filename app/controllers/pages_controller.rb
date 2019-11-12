@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:home]
-
+  # skip_before_action :check_sign_in!
   def home
   end
 
-  def log_in_as
-  end
+  # def log_in_as
+  # end
 
   def setting
   end

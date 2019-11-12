@@ -1,11 +1,19 @@
-<div class="choose-login-wrapper">
+<div class="choose-login-wrapper no-footer no-side-navbar">
   <div class="header">
     <h2>Welcome to</h2>
     <%= image_tag "callguru_logo.png" %>
   </div>
   <div class="buttons">
-    <%= link_to 'Enter Callguru as am Agent', new_user_session_path(signed_in_as: 'user'), class: 'callguru-button' %>
+    <% if current_user %>
+      <%= link_to 'Enter Callguru as an Agent', change_sign_in_as_path(user_id: current_user.id), class: 'callguru-button agent-button' %>
+    <% else %>
+      <%= link_to 'Enter Callguru as an Agent', new_user_session_path(signed_in_as: 'user'), class: 'callguru-button agent-button' %>
+    <% end %>
     <p>or</p>
-    <%= link_to 'as a Manager', new_user_session_path(signed_in_as: 'admin'), class: 'just-text' %>
+    <% if current_user %>
+      <%= link_to 'as a Manager', change_sign_in_as_path(user_id: current_user.id), class: 'just-text manager-button' %>
+    <% else %>
+      <%= link_to 'as a Manager', new_user_session_path(signed_in_as: 'admin'), class: 'just-text manager-button' %>
+    <% end %>
   </div>
 </div>

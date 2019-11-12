@@ -29,4 +29,24 @@ function addEventListenerToNavbarItems() {
   };
 }
 
+function addOrDeleteSideNavbar() {
+  const sideNavbar = document.querySelector('.callguru-navbar');
+  const noSideNavbar = document.querySelector('.no-side-navbar');
+  if (sideNavbar && noSideNavbar) {
+    sideNavbar.classList.add('d-none')
+  } else if (sideNavbar) {
+    if (sideNavbar.classList.contains('d-none')) {
+      sideNavbar.classList.remove('d-none')
+    }
+  };
+}
+
+function checkSideNavbar() {
+  const sideNavbar = document.querySelector('.callguru-navbar');
+  const noSideNavbar = document.querySelector('.no-side-navbar');
+  if (sideNavbar || noSideNavbar) {addOrDeleteSideNavbar()}
+};
+
+
 export { addEventListenerToNavbarItems };
+export { checkSideNavbar };
