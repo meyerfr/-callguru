@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(users_params)
     if @user.save
-      redirect_to users
+      redirect_to company_users(@company)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      redirect_to users
+      redirect_to company_users(@company)
     else
       redirect_to(:back)
     end
@@ -45,6 +45,10 @@ class UsersController < ApplicationController
   private
 
   def users_params
-    params.require(:user).permit(:first_name, :last_name, :email)
+    params.require(:user).permit(:first_name, :last_name, :email, :role, :signed_in_as)
+  end
+
+  def find_company
+    @company = Company.find(params[:company_id])
   end
 end

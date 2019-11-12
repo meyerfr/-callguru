@@ -1,20 +1,51 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="form-inputs">
-  <%= f.input :email,
-  required: false,
-  autofocus: true,
-  input_html: { autocomplete: "email" } %>
-  <%= f.input :password,
-  required: false,
-  input_html: { autocomplete: "current-password" } %>
-  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="choose-login-wrapper no-footer no-side-navbar">
+  <div class="header">
+    <h2>Welcome to</h2>
+    <%= image_tag "callguru_logo.png" %>
+  </div>
+  <div class="buttons">
+    <%# if current_user %>
+      <div class="callguru-button agent-button">Enter Callguru as an Agent</div>
+      <%#= link_to 'Enter Callguru as an Agent', change_sign_in_as_path(user_id: current_user.id), class: 'callguru-button agent-button' %>
+    <%# else %>
+      <!-- <div class="callguru-button agent-button">Enter Callguru as an Agent</div> -->
+      <%#= link_to 'Enter Callguru as an Agent', new_user_session_path(signed_in_as: 'user'), class: 'callguru-button agent-button' %>
+    <%# end %>
+    <p>or</p>
+    <%# if current_user %>
+      <div class="just-text manager-button">as a Manager</div>
+      <%#= link_to 'as a Manager', change_sign_in_as_path(user_id: current_user.id), class: 'just-text manager-button' %>
+    <%# else %>
+      <%#= link_to 'as a Manager', new_user_session_path(signed_in_as: 'admin'), class: 'just-text manager-button' %>
+    <%# end %>
+  </div>
 </div>
-
-<div class="form-actions">
-  <%= f.button :submit, "Log in" %>
+<div class="login-wrapper d-none">
+  <div class="login-container">
+    <div class="log-in-header">
+      <%= image_tag "callguru_logo.png", class: 'log-in-logo' %>
+      <h2>Sign In to Callguru</h2>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "off" } %>
+        <div class="d-flex">
+          <%= f.label 'Password' %>
+          <%= render "devise/shared/links" %>
+        </div>
+        <%= f.input :signed_in_as, wrapper_html: { class: 'd-none'} %>
+        <%= f.input :password,
+                    required: false,
+                    label: false,
+                    input_html: { autocomplete: "off" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", class: 'callguru-button log-in-button' %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

@@ -1,12 +1,50 @@
 .simple_form{
   .form-group{
     .form-control{
-      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.1);
-      border: none;
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #d1d5da;
     }
     .form-control:focus{
-      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.5);
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.1);
       color: black;
     }
   }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #d1d5da;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+// input[type="text"],
+// input[type="search"],
+// input[type="password"],
+// input[type="email"],
+// input[type="file"],
+// input[type="number"],
+// input[type="tel"],
+// textarea,
+// select {
+//   background-color: #ff9900 !important;
+// }
+
+// input:-webkit-autofill {
+//     -webkit-box-shadow: 0 0 0 30px white inset;
+//     background-color: white;
+// }
+
+// input:-webkit-autofill:focus {
+//     -webkit-box-shadow: 0 0 0 30px white inset;
+//     background-color: white ;
+// }

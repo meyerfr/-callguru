@@ -1,4 +1,34 @@
-.form-wrapper{
-  width: 50%;
-  margin: 30px;
+.new-wrapper{
+  position: fixed;
+  min-width: calc(100% - 210px);
+  min-height: calc(100% - 65px);
+  justify-content: space-between;
+  .form-wrapper{
+    width: 50%;
+    padding: 30px;
+    align-self: center;
+  }
+  .agent-interface-wrapper{
+    background: #E5E5E5;
+    min-width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .preview{
+      align-self: start;
+      margin: 0 0px 7px 5%;
+      color: $callguru;
+      font-size: 17px;
+    }
+    .agent-interface-container{
+      width: 92%;
+      height: 92%;
+      border: 1px solid white;
+      background: #f2f5fe;
+      .callguru-brand{
+        width: 100px;
+      }
+    }
+  }
 }

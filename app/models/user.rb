@@ -6,11 +6,15 @@ class User < ApplicationRecord
   devise :session_limitable, :invitable, :database_authenticatable,
          :recoverable, :rememberable, :validatable, invite_for: 3.days
 
+  def user?
+    signed_in_as == 'user'
+  end
+
   def admin?
-    role == 'admin'
+    signed_in_as == 'admin'
   end
 
   def superadmin?
-    role == 'superadmin'
+    signed_in_as == 'superadmin'
   end
 end

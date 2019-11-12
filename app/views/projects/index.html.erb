@@ -1,24 +1,29 @@
-<%# if current_user.admin? %>
+<% if current_user.admin? || current_user.superadmin? %>
   <div class="project-card-dashboard-wrapper">
     <div class="buttons">
       <!-- create new project button -->
-      <div class="callguru-button"><%= link_to 'create new project', new_project_path %></div>
+      <%= link_to 'create new project', new_user_project_path(current_user), class: 'callguru-button' %>
       <div class="callguru-button just-border icon">
         <i class="fas fa-filter"></i>
         <p>Filter</p>
       </div>
     </div>
-    <% @projects.each do |project| %>
-      <%= render 'shared/project_card_dashboard', project: project %>
-    <% end %>
+    <div class="project-card-wrapper">
+      <% @projects.each do |project| %>
+        <%= render 'shared/project_card_dashboard', project: project %>
+      <% end %>
+    </div>
   </div>
-<!-- <%# else %>
-  <div class="project-card-call-wrapper">
-    <p>start a call</p>
-    <%# @projects.each do |project| %>
-      <div class="project_card_call">
-        <p><%#= project.name %></p>
-      </div>
-    <%# end %>
+<% else %>
+  <div class="project-card-wrapper agent no-footer">
+    <h4>start a call</h4>
+    <div class="project-card-controller">
+      <% @projects.each do |project| %>
+        <div class="project-card">
+          <%= project.name %>
+          <p class="text">goal: <%= project.goal %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
-<%# end %> -->
+<% end %>

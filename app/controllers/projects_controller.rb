@@ -11,12 +11,14 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @projects = Project.all
+    @user = current_user
   end
 
   def create
     @project = Project.new(projects_params)
     if @project.save
-      redirect_to projects
+      redirect_to user_projects_path(current_user.id)
     else
       render :new
     end
@@ -38,7 +40,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     if @project.destroy
-      redirect_to projects
+      redirect_to user_projects_path(current_user)
     else
       redirect_to(:back)
     end

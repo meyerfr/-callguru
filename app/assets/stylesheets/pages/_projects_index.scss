@@ -1,0 +1,43 @@
+.project-card-wrapper{
+  padding: 15px 0px;
+  h4{
+    padding-left: 14px;
+    font-size: 18px;
+    color: $callguru;
+  }
+  .project-card-controller{
+    .project-card{
+      background-color: white;
+      padding: 8px 14px;
+      margin: 10px 0px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 56px;
+      .text{
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+      }
+      p{margin: 0;}
+    }
+  }
+}
+
+.project-card-wrapper.agent{
+  flex-direction: column;
+  padding: 15px 50px;
+}
+
+.project-card-dashboard-wrapper{
+  padding: 10px 50px;
+  .buttons{
+    display: flex;
+    padding: 10px 20px;
+    .callguru-button{
+      margin-right: 30px;
+    }
+  }
+}

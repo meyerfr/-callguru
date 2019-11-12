@@ -1,0 +1,20 @@
+<% if user_signed_in? && current_user.user? %>
+  <div class="footer-wrapper">
+    <%= link_to user_projects_path(current_user), class: 'footer-icon active' do %>
+      <div class="circle"></div>
+      <p>Blueprint</p>
+    <% end %>
+    <%= link_to '#', class: 'footer-icon' do %>
+      <div class="circle"></div>
+      <p>Script</p>
+    <% end %>
+    <%= link_to '#', class: 'footer-icon' do %>
+      <div class="circle"></div>
+      <p>Questions</p>
+    <% end %>
+    <%= link_to '#', class: 'footer-icon' do %>
+      <div class="circle"></div>
+      <p>Objections</p>
+    <% end %>
+  </div>
+<% end %>
