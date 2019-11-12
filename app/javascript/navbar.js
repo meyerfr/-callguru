@@ -1,9 +1,15 @@
 function addNavbarItemActive() {
-  const href = window.location.href.replace('http://localhost:3000/', '');
-  if (href == 'users/1/projects' || href == '') {
+  var hrefTotal = window.location.href;
+  if (hrefTotal.includes('http://localhost:3000/')) {
+    var href = hrefTotal.replace('http://localhost:3000/', '');
+  } else if (hrefTotal.includes('https://callguru.herokuapp.com')) {
+    var href = hrefTotal.replace('https://callguru.herokuapp.com/', '');
+  };
+
+  if (href === 'users/1/projects' || href === '') {
     document.querySelector('.projects').classList.add('active')
     // correctTarget.classList.add('active');
-  } else if (href == 'pages/setting'){
+  } else if (href === 'pages/setting'){
     document.querySelector('.settings').classList.add('active');
   }
 };
