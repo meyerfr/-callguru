@@ -10,9 +10,9 @@ class PagesController < ApplicationController
   def change_sign_in_as
     user = User.find(params[:user_id])
     if user.signed_in_as == 'user'
-      user.update(signed_in_as: 'admin')
+      user.update!(signed_in_as: 'admin')
     elsif user.signed_in_as == 'admin'
-      user.update(signed_in_as: 'user')
+      user.update!(signed_in_as: 'user')
     end
     redirect_to :root
   end
