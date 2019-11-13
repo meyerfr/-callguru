@@ -16,8 +16,24 @@
         <%= f.button :submit, 'create Project', class: 'callguru-button' %>
       <% end %>
     </div>
+    <div class="info-field-wrapper show-preview-wrapper">
+      <div class="show-preview info-on-hover d-none"><i class="fas fa-plus"></i></div>
+      <div class="info-field-container preview-info d-none">
+        <i class="fas fa-info"></i>
+        <p>Show agent interface preview</p>
+      </div>
+    </div>
     <div class="agent-interface-wrapper">
-      <p class="preview">Agent Interface Preview</p>
+      <div class="d-flex justify-content-between agent-interface-wrapper-header">
+        <p class="preview">Agent Interface Preview</p>
+        <div class="info-field-wrapper preview-button">
+          <i class="far fa-window-minimize no-preview info-on-hover"></i>
+          <div class="info-field-container preview-info hide-preview d-none">
+            <i class="fas fa-info"></i>
+            <p>Hide agent interface preview</p>
+          </div>
+        </div>
+      </div>
       <div class="agent-interface-container">
         <div class="navbar callguru-navbar-agent">
           <%= image_tag "callguru_logo.png", class: 'callguru-brand' %>
