@@ -13,7 +13,8 @@
       <%= simple_form_for([@user, @project]) do |f| %>
         <%= f.input :name %>
         <%= f.input :goal, wrapper_html: { class: 'd-none' } %>
-        <%= f.button :submit, 'create Project', class: 'callguru-button' %>
+        <div class="callguru-button">Next</div>
+        <%= f.button :submit, 'create Project', class: 'callguru-button d-none' %>
       <% end %>
     </div>
     <div class="info-field-wrapper show-preview-wrapper">
