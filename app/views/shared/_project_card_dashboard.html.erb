@@ -10,7 +10,8 @@
     <p><%= project.name %></p>
   </div>
   <div class="project-card-footer">
-    <p>Show Project</p>
+    <p>Edit Project</p>
     <i class="fas fa-arrow-right"></i>
   </div>
+  <%= link_to '', edit_project_path(project.id), class: 'project-card-link' %>
 </div>

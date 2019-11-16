@@ -3,12 +3,16 @@
     .form-control{
       box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.05);
       border: 1px solid #d1d5da;
+      background-image: none;
     }
     .form-control:focus{
       box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.1);
       color: black;
     }
   }
+  // label{
+  //   color: black;
+  // }
 }
 
 input:-webkit-autofill,

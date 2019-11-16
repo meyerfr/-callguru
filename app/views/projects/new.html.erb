@@ -1,6 +1,6 @@
 <div class="callguru-upper-navbar">
   <div class="center-text">
-    <h2>Create new Project</h2>
+    <h2>Create New Project</h2>
   </div>
   <div class="buttons">
     <%= link_to 'Cancel', '#', class: 'callguru-button just-border' %>
@@ -13,11 +13,28 @@
       <%= simple_form_for([@user, @project]) do |f| %>
         <%= f.input :name %>
         <%= f.input :goal, wrapper_html: { class: 'd-none' } %>
-        <%= f.button :submit, 'create Project', class: 'callguru-button' %>
+        <div class="callguru-button">Next</div>
+        <%= f.button :submit, 'create Project', class: 'callguru-button d-none' %>
       <% end %>
     </div>
+    <div class="info-field-wrapper show-preview-wrapper">
+      <div class="show-preview info-on-hover d-none"><i class="fas fa-plus"></i></div>
+      <div class="info-field-container preview-info d-none">
+        <i class="fas fa-info"></i>
+        <p>Show agent interface preview</p>
+      </div>
+    </div>
     <div class="agent-interface-wrapper">
-      <p class="preview">Agent Interface Preview</p>
+      <div class="d-flex justify-content-between agent-interface-wrapper-header">
+        <p class="preview">Agent Interface Preview</p>
+        <div class="info-field-wrapper preview-button">
+          <i class="far fa-window-minimize no-preview info-on-hover"></i>
+          <div class="info-field-container preview-info hide-preview d-none">
+            <i class="fas fa-info"></i>
+            <p>Hide agent interface preview</p>
+          </div>
+        </div>
+      </div>
       <div class="agent-interface-container">
         <div class="navbar callguru-navbar-agent">
           <%= image_tag "callguru_logo.png", class: 'callguru-brand' %>

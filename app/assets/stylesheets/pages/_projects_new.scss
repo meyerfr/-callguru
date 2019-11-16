@@ -8,18 +8,36 @@
     padding: 30px;
     align-self: center;
   }
+  .show-preview-wrapper{
+    position: absolute;
+    right: calc(25px + 1.4%);
+    top: calc(10% - 7px);
+    z-index: 1;
+  }
   .agent-interface-wrapper{
     background: #E5E5E5;
-    min-width: 33%;
+    min-width: 27%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .preview{
-      align-self: start;
-      margin: 0 0px 7px 5%;
-      color: $callguru;
-      font-size: 17px;
+    position: fixed;
+    right: 20px;
+    align-self: center;
+    box-shadow: -14px 14px 5px rgba(0, 0, 0, 0.2);
+    .agent-interface-wrapper-header{
+      margin-bottom: 7px;
+      padding: 0 5%;
+      width: 100%;
+      .preview{
+        margin: 0;
+        color: $callguru;
+        font-size: 17px;
+      }
+      .preview-button{
+        position: relative;
+      }
     }
     .agent-interface-container{
       width: 92%;
@@ -31,4 +49,9 @@
       }
     }
   }
+}
+.preview-info{
+  position: absolute;
+  top: -40px;
+  right: -10px;
 }

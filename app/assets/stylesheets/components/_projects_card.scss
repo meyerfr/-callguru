@@ -1,6 +1,7 @@
 .project-card-wrapper{
   display: flex;
   .project-card-container{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -12,7 +13,7 @@
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
     .project-card-shortcuts{
-      height: 20px;
+      height: 36px;
       width: 100%;
       position: relative;
       i{font-size: 15px;}
@@ -36,6 +37,9 @@
         font-size: 18px;
       }
     }
+    .project-card-header:hover{
+      opacity: 0.8;
+    }
     .project-card-footer{
       display: flex;
       justify-content: center;
@@ -56,5 +60,17 @@
         color: $callguru;
       }
     }
+    .project-card-footer:hover{
+      opacity: 0.8;
+    }
+    .project-card-link{
+      width: 100%;
+      height: calc(100% - 25px);
+      top: 25px;
+      position: absolute;
+    }
+  }
+  .project-card-container:hover{
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
 }
