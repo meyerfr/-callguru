@@ -28,13 +28,18 @@ const addFields = (event) => {
   time = new Date().getTime();
   regexp = new RegExp(event.currentTarget.dataset.id, 'g');
   var insertIn = event.currentTarget.parentElement.previousElementSibling; //field where the new form-field must be inserted
+  console.log(insertIn);
   insertIn.insertAdjacentHTML('beforeend', event.currentTarget.dataset.fields.replace(regexp, time)); //insert form-field
   // now addEventListeners to the new add_fields button and to the remove_record button
   var insertedRemoveButton = insertIn.lastElementChild.querySelector('.remove_record'); //inserted Remove_record Button
   var insertedAddButton = insertIn.lastElementChild.querySelector('.add_fields'); //inserted Add_fields button
   if (insertedRemoveButton) insertedRemoveButton.addEventListener('click', removeFields);
   if (insertedAddButton) insertedAddButton.addEventListener('click', addFields);
-
+  var addScriptButtons = insertIn.querySelectorAll('.add-script-button');
+  console.log(addScriptButtons);
+  if (addScriptButtons.length > 0) {
+    addScriptButtons[addScriptButtons.length - 1].click();
+  }
   // const newAddFieldsButtons = document.querySelectorAll('.new-add-fields');
   // if (newAddFieldsButtons.length > 0) newAddFieldsButtons[newAddFieldsButtons.length - 1].addEventListener('click', addFields);
   return event.preventDefault();
