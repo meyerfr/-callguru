@@ -10,12 +10,7 @@
 <div class="padding-upper-navbar">
   <div class="new-wrapper d-flex">
     <div class="form-wrapper">
-      <%= simple_form_for([@user, @project]) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :goal, wrapper_html: { class: 'd-none' } %>
-        <div class="callguru-button">Next</div>
-        <%= f.button :submit, 'create Project', class: 'callguru-button d-none' %>
-      <% end %>
+      <%= render 'form', user: current_user, project: @project %>
     </div>
     <div class="info-field-wrapper show-preview-wrapper">
       <div class="show-preview info-on-hover d-none"><i class="fas fa-plus"></i></div>

@@ -8,7 +8,10 @@ class StagesController < ApplicationController
   end
 
   def new
+    @project = Project.find(params[:project_id])
     @stage = Stage.new
+    @section = Section.new
+    @script = Script.new
   end
 
   def create
@@ -45,7 +48,7 @@ class StagesController < ApplicationController
   private
 
   def stages_params
-    params.require(:stage).permit(:name)
+    params.require(:stage).permit(:name, sections_attributes: Section.attribute_names.map(&:to_sym).push(:_destroy))
   end
 
   def find_project

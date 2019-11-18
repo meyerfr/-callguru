@@ -1,0 +1,57 @@
+<div class="callguru-upper-navbar">
+  <div class="center-text">
+    <h2>Create New Project</h2>
+  </div>
+  <div class="buttons">
+    <%= link_to 'Cancel', '#', class: 'callguru-button just-border' %>
+    <%= link_to 'Save as Draft', '#', class: 'callguru-button' %>
+  </div>
+</div>
+<div class="padding-upper-navbar">
+  <div class="new-wrapper d-flex">
+    <div class="form-wrapper">
+      <%= render 'form' %>
+      <%#= simple_form_for([@project, @stage]) do |f| %>
+        <%#= f.input :name %>
+        <%#= f.input :goal %> <!-- #, wrapper_html: { class: '' } -->
+        <!-- <div class="callguru-button">Next</div> -->
+        <%#= f.button :submit, 'create Stage', class: 'callguru-button' %>
+      <%# end %>
+    </div>
+    <div class="info-field-wrapper show-preview-wrapper">
+      <div class="show-preview info-on-hover d-none"><i class="fas fa-plus"></i></div>
+      <div class="info-field-container preview-info d-none">
+        <i class="fas fa-info"></i>
+        <p>Show agent interface preview</p>
+      </div>
+    </div>
+    <div class="agent-interface-wrapper">
+      <div class="d-flex justify-content-between agent-interface-wrapper-header">
+        <p class="preview">Agent Interface Preview</p>
+        <div class="info-field-wrapper preview-button">
+          <i class="far fa-window-minimize no-preview info-on-hover"></i>
+          <div class="info-field-container preview-info hide-preview d-none">
+            <i class="fas fa-info"></i>
+            <p>Hide agent interface preview</p>
+          </div>
+        </div>
+      </div>
+      <div class="agent-interface-container">
+        <div class="navbar callguru-navbar-agent">
+          <%= image_tag "callguru_logo.png", class: 'callguru-brand' %>
+        </div>
+        <div class="project-card-wrapper agent">
+          <!-- <h4>start a call</h4> -->
+          <div class="project-card-controller">
+            <%# @projects.each do |project| %>
+              <!-- <div class="project-card"> -->
+                <%#= project.name %>
+                <!-- <p class="text">goal: <%#= project.goal %></p> -->
+              <!-- </div> -->
+            <%# end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

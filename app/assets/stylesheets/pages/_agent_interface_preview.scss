@@ -1,0 +1,7 @@
+.agent-interface-wrapper{
+  .project-card-wrapper.agent{
+    display: block;
+    height: calc(92% - 30px);
+    overflow: scroll;
+  }
+}

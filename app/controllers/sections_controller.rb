@@ -9,6 +9,7 @@ class SectionsController < ApplicationController
 
   def new
     @section = Section.new
+    @section.scripts.build
   end
 
   def create
@@ -45,7 +46,7 @@ class SectionsController < ApplicationController
   private
 
   def sections_params
-    params.require(:section).permit(:name)
+    params.require(:section).permit(:name, scripts_attributes: Script.attribute_names.map(&:to_sym).push(:_destroy))
   end
 
   def find_stage

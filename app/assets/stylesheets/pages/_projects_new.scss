@@ -11,13 +11,13 @@
   .show-preview-wrapper{
     position: absolute;
     right: calc(25px + 1.4%);
-    top: calc(10% - 7px);
+    top: calc(15% - 7px);
     z-index: 1;
   }
   .agent-interface-wrapper{
     background: #E5E5E5;
     min-width: 27%;
-    height: 80%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
