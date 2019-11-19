@@ -28,22 +28,39 @@ const addFields = (event) => {
   time = new Date().getTime();
   regexp = new RegExp(event.currentTarget.dataset.id, 'g');
   var insertIn = event.currentTarget.parentElement.previousElementSibling; //field where the new form-field must be inserted
-  console.log(insertIn);
+  const target = event.currentTarget;
   insertIn.insertAdjacentHTML('beforeend', event.currentTarget.dataset.fields.replace(regexp, time)); //insert form-field
+  var insertedElement = insertIn.lastElementChild;
   // now addEventListeners to the new add_fields button and to the remove_record button
   var insertedRemoveButton = insertIn.lastElementChild.querySelector('.remove_record'); //inserted Remove_record Button
-  var insertedAddButton = insertIn.lastElementChild.querySelector('.add_fields'); //inserted Add_fields button
+  // var insertedAddButton = insertIn.lastElementChild.querySelector('.add_fields'); //inserted Add_fields button
+  // var insertedAddButtons = insertIn.lastElementChild.querySelectorAll('.add_fields'); //inserted Add_fields button
+  // console.log(insertedAddButtons);
   if (insertedRemoveButton) insertedRemoveButton.addEventListener('click', removeFields);
-  if (insertedAddButton) insertedAddButton.addEventListener('click', addFields);
-  var addScriptButtons = insertIn.querySelectorAll('.add-script-button');
-  console.log(addScriptButtons);
-  if (addScriptButtons.length > 0) {
-    addScriptButtons[addScriptButtons.length - 1].click();
+  // if (insertedAddButton){
+  //   insertedAddButton.addEventListener('click', addFields);
+  //   var addScriptButtons = insertIn.lastElementChild.querySelectorAll('.add-script-button');
+  //   if (addScriptButtons.length > 0) {
+  //     addScriptButtons[addScriptButtons.length - 1].click();
+  //   }
+  // }
+  if (insertedElement.lastElementChild.lastElementChild.classList.contains('add_fields')) {
+    insertedElement.lastElementChild.lastElementChild.addEventListener('click', addFields)
+    insertedElement.lastElementChild.lastElementChild.click();
   }
+
+  // if (insertIn.classList.contains('stage_fields')) {
+
+  // }
+  // scroll to taregt + 20px
+  insertIn.scrollIntoView(false + 20)
   // const newAddFieldsButtons = document.querySelectorAll('.new-add-fields');
   // if (newAddFieldsButtons.length > 0) newAddFieldsButtons[newAddFieldsButtons.length - 1].addEventListener('click', addFields);
   return event.preventDefault();
 }
+
+// if press addStage, dann muss auch addSection.click(), dann muss addStcript.click()
+
 
 function addOrRemoveFields() {
   // if button addField.click then addFields()

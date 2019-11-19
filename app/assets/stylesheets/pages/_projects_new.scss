@@ -1,7 +1,7 @@
 .new-wrapper{
-  position: fixed;
+  position: relative;
   min-width: calc(100% - 210px);
-  min-height: calc(100% - 65px);
+  min-height: calc(100vh - 65px);
   justify-content: space-between;
   .form-wrapper{
     width: 50%;
@@ -24,6 +24,7 @@
     align-items: center;
     position: fixed;
     right: 20px;
+    top: 17%;
     align-self: center;
     box-shadow: -14px 14px 5px rgba(0, 0, 0, 0.2);
     .agent-interface-wrapper-header{

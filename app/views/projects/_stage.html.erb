@@ -2,12 +2,12 @@
   <%= f.input_field :_destroy, as: :hidden %>
   <%= link_to 'Delete', '#', class: 'remove_record' %>
   <%= f.input :name, label: false, placeholder: 'Stage' %>
-  <div class='fields'>
+  <div class='section-fields'>
     <%= f.simple_fields_for :sections do |builder| %>
       <%= render 'section', f: builder %>
     <% end %>
   </div>
   <div class="form-action">
-    <%= link_to_add_fields('Add Section', f, :sections, class: 'btn callguru-button new-add-fields') %>
+    <%= link_to_add_fields('Add Section', f, :sections, class: 'btn callguru-button new-add-fields add-section-button') %>
   </div>
 </div>
