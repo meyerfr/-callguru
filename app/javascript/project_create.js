@@ -9,7 +9,7 @@ const hideProjectFormAndCreateScript = (event) => {
 
 function creatingProject() {
   const nextStepButton = document.querySelector('.next-step');
-  nextStepButton.addEventListener('click', hideProjectFormAndCreateScript);
+  if (nextStepButton) nextStepButton.addEventListener('click', hideProjectFormAndCreateScript);
 }
 
 export { creatingProject }
