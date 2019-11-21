@@ -15,10 +15,11 @@
 //   return event.preventDefault();
 // });
 
+
 const removeFields = (event) => {
   const parentDiv = event.currentTarget.closest('div')
   event.currentTarget.previousElementSibling.value = '1'; // hidden field _destroy
-  parentDiv.classList.add('d-none');
+  parentDiv.parentElement.classList.add('d-none');
   parentDiv.querySelector('.form-control').value = '';
   return event.preventDefault();
 }
@@ -27,8 +28,8 @@ const addFields = (event) => {
   var regexp, time;
   time = new Date().getTime();
   regexp = new RegExp(event.currentTarget.dataset.id, 'g');
-  var insertIn = event.currentTarget.parentElement.previousElementSibling; //field where the new form-field must be inserted
   const target = event.currentTarget;
+  var insertIn = target.parentElement.previousElementSibling; //field where the new form-field must be inserted
   insertIn.insertAdjacentHTML('beforeend', event.currentTarget.dataset.fields.replace(regexp, time)); //insert form-field
   var insertedElement = insertIn.lastElementChild;
   // now addEventListeners to the new add_fields button and to the remove_record button
@@ -47,13 +48,15 @@ const addFields = (event) => {
   if (insertedElement.lastElementChild.lastElementChild.classList.contains('add_fields')) {
     insertedElement.lastElementChild.lastElementChild.addEventListener('click', addFields)
     insertedElement.lastElementChild.lastElementChild.click();
-  }
+  };
 
   // if (insertIn.classList.contains('stage_fields')) {
 
   // }
   // scroll to taregt + 20px
-  insertIn.scrollIntoView(false + 20)
+  insertIn.nextElementSibling.scrollIntoView(false);
+  window.scrollBy(0, 20);
+
   // const newAddFieldsButtons = document.querySelectorAll('.new-add-fields');
   // if (newAddFieldsButtons.length > 0) newAddFieldsButtons[newAddFieldsButtons.length - 1].addEventListener('click', addFields);
   return event.preventDefault();

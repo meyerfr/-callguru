@@ -4,9 +4,30 @@
   min-height: calc(100vh - 65px);
   justify-content: space-between;
   .form-wrapper{
-    width: 50%;
+    width: 55%;
     padding: 30px;
     align-self: center;
+    .form-inputs{
+      position: relative;
+      .remove_record{
+        position: absolute;
+        right: -25px;
+        top: 5px;
+        font-size: 18px;
+        color: #f51964;
+      }
+    }
+    .section-fields{margin-left: 10%;}
+    .script-fields{margin-left: 10%;}
+    .form-actions{
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 20px;
+      input{margin-top: 20px;}
+    }
+    .form-action{
+      margin-left: 10%;
+    }
   }
   .show-preview-wrapper{
     position: absolute;

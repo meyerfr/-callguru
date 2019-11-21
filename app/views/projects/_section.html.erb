@@ -1,13 +1,15 @@
 <div class="one-input">
-  <%= f.input_field :_destroy, as: :hidden %>
-  <%= link_to 'Delete', '#', class: 'remove_record' %>
-  <%= f.input :name, label: false, placeholder: 'Section' %>
+  <div class="form-inputs">
+    <%= f.input_field :_destroy, as: :hidden %>
+    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, '#', class: 'remove_record' %>
+    <%= f.input :name, label: false, placeholder: 'Section' %>
+  </div>
   <div class='script-fields'>
     <%= f.simple_fields_for :scripts do |builder| %>
       <%= render 'script', f: builder %>
     <% end %>
   </div>
   <div class="from-action">
-      <%= link_to_add_fields('Add Script', f, :scripts, class: 'btn callguru-button add-script-button new-add-fields d-none') %>
+      <%= link_to_add_fields('<i class="fas fa-plus-square"></i>'.html_safe, f, :scripts, class: 'add-script-button new-add-fields d-none') %>
   </div>
 </div>

@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(user_id: current_user.id)
     @projects = Project.all
     @user = current_user
-    @project.stages.build.sections.build.scripts.build
+    #@project.stages.build.sections.build.scripts.build
   end
 
   def create
