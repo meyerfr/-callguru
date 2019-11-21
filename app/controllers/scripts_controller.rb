@@ -4,7 +4,7 @@ class ScriptsController < ApplicationController
   end
 
   def show
-    @script = Script.find(params(:id))
+    @script = Script.find(params[:id])
   end
 
   def new

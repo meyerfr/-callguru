@@ -9,11 +9,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to "Projects", "#", class: "nav-link d-none d-sm-block" %>
+            <%= link_to "Projects", root_path, class: "nav-link d-none d-sm-block" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link d-none d-sm-block" %>
-          </li>
+          <!-- <li class="nav-item">
+            <%#= link_to "Messages", "#", class: "nav-link d-none d-sm-block" %>
+          </li> -->
           <li class="navbar-nav mr-auto">
             <%= link_to 'Manager Dashboard', change_sign_in_as_path(user_id: current_user.id), class: "change-signin nav-link d-none d-sm-block" %>
           </li>

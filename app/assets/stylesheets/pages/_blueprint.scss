@@ -1,0 +1,9 @@
+.circle{
+  width: 14px;
+  height: 14px;
+  background: lightgray;
+  border-radius: 50%;
+}
+.circle.active{
+  background: $callguru;
+}

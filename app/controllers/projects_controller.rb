@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params(:id))
+    @project = Project.find(params[:id])
   end
 
   def new
@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(projects_params)
     @project.user_id = params[:user_id]
     if @project.save!
-      redirect_to new_project_stage_path(@project)
+      redirect_to user_projects_path(current_user)
     else
       render :new
     end
@@ -54,7 +54,14 @@ class ProjectsController < ApplicationController
   private
 
   def projects_params
-    # params.require(:project).permit(:name, :goal, :user_id, stages_attributes: [:id, :_destroy, :project_id, :name])
-    params.require(:project).permit(:name, :goal, :user_id, stages_attributes: Stage.attribute_names.map(&:to_sym).push(:_destroy))
+    params.require(:project).permit(:name, :goal, :user_id,
+      stages_attributes: [:id, :name, :project_id, :created_at, :updated_at, :_destroy,
+        sections_attributes: [:id, :name, :stage_id, :created_at, :updated_at, :_destroy,
+          scripts_attributes: [:id, :name, :text, :section_id, :created_at, :updated_at, :_destroy]
+        ]
+      ]
+    )
+
+    # params.require(:project).permit(:name, :goal, :user_id, stages_attributes: Stage.attribute_names.map(&:to_sym).push(:_destroy))
   end
 end

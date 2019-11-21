@@ -4,7 +4,14 @@ class SectionsController < ApplicationController
   end
 
   def show
-    @section = Section.find(params(:id))
+    @section = Section.find(params[:id])
+    @stage = @section.stage
+    @project = @stage.project
+    # @project = Project.find(@stage.project_id)
+    @next_section = @section.next
+    @next_section = @stage.next.sections.first if @next_section.nil? && !@stage.next.nil?
+    @prev_section = @section.prev
+    @prev_section = @stage.prev.sections.last if @prev_section.nil? && !@stage.prev.nil?
   end
 
   def new
@@ -51,5 +58,15 @@ class SectionsController < ApplicationController
 
   def find_stage
     @stage = Stage.find(params[:stage_id])
+  end
+
+  def find_next_section(project, stage, section_now)
+  #   stage.sections.each_with_index do |section, index|
+  #     if section == section_now
+  #       return stage.sections[index + 1]
+  #     end
+  #   end
+  #   # if next section.nil? dann muss nach der nächsten Stage und der ersten Section der nächsten Stage geguckt werden.
+  #   stage.sections.each_with_index { |section, index| return stage.sections[index + 1] if section == section_now }
   end
 end

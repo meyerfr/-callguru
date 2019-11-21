@@ -1,16 +1,41 @@
-<div class="project-card-wrapper">
-  <h4>Blueprint</h4>
+<div class="project-card-wrapper agent">
+  <div class="heading d-flex">
+    <h4>Blueprint</h4>
+    <h4>–</h4>
+    <h4><%= @project.name %></h4>
+  </div>
   <div class="project-card-controller">
-    <% @projects.each do |project| %>
-      <div class="project-card">
-        <p><%= project.name %></p>
-        <% stages = Stage.all.where(project_id: project.id) %>
-        <% if stages %>
-          <% stages.each do |stage| %>
-            <p class="text"><%= stage.name %></p>
+    <% if @project.stages.length > 0 %>
+      <% @project.stages.each do |stage| %>
+        <div class="project-card">
+          <div class="d-flex justify-content-between align-items-center">
+            <%= stage.name %>
+            <div class="circle"></div>
+          </div>
+          <% stage.sections.each do |section| %>
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="text"><%= section.name %></p>
+              <div class="circle"></div>
+            </div>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
+
+<%= render 'shared/footer', project: @project %>
+
+ <!-- <div class="project-card-wrapper agent no-footer">
+    <h4>start a call</h4>
+    <div class="project-card-controller">
+      <%# @projects.each do |project| %>
+        <%#= link_to section_path(project.stages.first.sections.first), class: 'link-to-project' do %>
+          <div class="project-card">
+            <%#= project.name %>
+            <p class="text">goal: <%#= project.goal %></p>
+          </div>
+        <%# end %>
+      <%# end %>
+    </div>
+  </div> -->

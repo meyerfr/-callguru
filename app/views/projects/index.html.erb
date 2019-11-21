@@ -19,10 +19,12 @@
     <h4>start a call</h4>
     <div class="project-card-controller">
       <% @projects.each do |project| %>
-        <div class="project-card">
-          <%= project.name %>
-          <p class="text">goal: <%= project.goal %></p>
-        </div>
+        <%= link_to section_path(project.stages.first.sections.first), class: 'link-to-project' do %>
+          <div class="project-card">
+            <%= project.name %>
+            <p class="text">goal: <%= project.goal %></p>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
