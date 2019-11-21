@@ -6,6 +6,8 @@ import { checkSideNavbar } from '../navbar';
 import { checkFooter } from '../footer';
 import { showOrHidePreview } from '../agents_preview';
 import { infoOnHovering } from '../hover_effect_for_info';
+import { addOrRemoveFields } from '../nested_forms';
+import { creatingProject } from '../project_create';
 
 signInAs();
 signOut();
@@ -14,3 +16,5 @@ checkSideNavbar();
 checkFooter();
 showOrHidePreview();
 infoOnHovering();
+addOrRemoveFields();
+creatingProject();

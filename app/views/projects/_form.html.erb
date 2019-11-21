@@ -1,0 +1,9 @@
+<% if defined?(user) %>
+  <%= simple_form_for([user, project]) do |builder| %>
+    <%= render 'project_form_fields', f: builder %>
+  <% end %>
+<% else %>
+  <%= simple_form_for(project) do |builder| %>
+    <%= render 'project_form_fields', f: builder %>
+  <% end %>
+<% end %>

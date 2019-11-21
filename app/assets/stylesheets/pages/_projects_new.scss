@@ -1,29 +1,51 @@
 .new-wrapper{
-  position: fixed;
+  position: relative;
   min-width: calc(100% - 210px);
-  min-height: calc(100% - 65px);
+  min-height: calc(100vh - 65px);
   justify-content: space-between;
   .form-wrapper{
-    width: 50%;
+    width: 55%;
     padding: 30px;
     align-self: center;
+    .form-inputs{
+      position: relative;
+      .remove_record{
+        position: absolute;
+        right: -25px;
+        top: 5px;
+        font-size: 18px;
+        color: #f51964;
+      }
+    }
+    .section-fields{margin-left: 10%;}
+    .script-fields{margin-left: 10%;}
+    .form-actions{
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 20px;
+      input{margin-top: 20px;}
+    }
+    .form-action{
+      margin-left: 10%;
+    }
   }
   .show-preview-wrapper{
     position: absolute;
     right: calc(25px + 1.4%);
-    top: calc(10% - 7px);
+    top: calc(15% - 7px);
     z-index: 1;
   }
   .agent-interface-wrapper{
     background: #E5E5E5;
     min-width: 27%;
-    height: 80%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     right: 20px;
+    top: 17%;
     align-self: center;
     box-shadow: -14px 14px 5px rgba(0, 0, 0, 0.2);
     .agent-interface-wrapper-header{

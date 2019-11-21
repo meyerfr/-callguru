@@ -1,10 +1,10 @@
 .project-card-wrapper{
-  display: flex;
   .project-card-container{
     position: relative;
     display: flex;
     flex-direction: column;
     width: 25%;
+    min-width: 210px;
     height: 160px;
     background-color: white;
     margin: 10px 20px;
