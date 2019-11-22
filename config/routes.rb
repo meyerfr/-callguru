@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'projects#index'
   get 'pages/setting'
-  get '/patients/:id', to: 'patients#show', as: 'patient'
+  # get '/patients/:id', to: 'patients#show', as: 'patient'
   get 'pages/change_sign_in_as/:user_id', to: 'pages#change_sign_in_as', as: 'change_sign_in_as'
-  get 'pages/blueprint'
+  get 'pages/blueprint/:project_id', to: 'pages#blueprint', as: 'blueprint'
   devise_for :users, skip: [:sessions]
   as :user do
     get 'sign_in', to: 'users/sessions#new', as: :new_user_session

@@ -18,6 +18,6 @@ class PagesController < ApplicationController
   end
 
   def blueprint
-    @projects = Project.all
+    @project = Project.find(params[:project_id])
   end
 end
