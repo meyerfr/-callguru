@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      redirect_to company_users(@company)
+      redirect_to company_users_path(current_user.company)
     else
       redirect_to(:back)
     end
