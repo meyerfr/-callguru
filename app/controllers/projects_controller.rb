@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
   # skip_before_action :authenticate_user!
   before_action :check_sign_in!
+  before_action :check_teamleader!, only: [:edit, :update, :destroy]
+
   def index
-    @projects = Project.all
+    @projects = current_user.projects
   end
 
   def show
@@ -10,8 +12,8 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Project.new(user_id: current_user.id)
-    @projects = Project.all
+    @project = Project.new
+    @projects = current_user.projects
     @user = current_user
     #@project.stages.build.sections.build.scripts.build
   end
@@ -20,6 +22,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(projects_params)
     @project.user_id = params[:user_id]
     if @project.save!
+      Team.create(user_id: current_user.id, project_id: @project.id, role: 'teamleader')
       redirect_to user_projects_path(current_user)
     else
       render :new
@@ -63,5 +66,18 @@ class ProjectsController < ApplicationController
     )
 
     # params.require(:project).permit(:name, :goal, :user_id, stages_attributes: Stage.attribute_names.map(&:to_sym).push(:_destroy))
+  end
+
+  def check_teamleader!
+    redirect_to root_path, alert: "Please contact the admin of the project for editing" unless
+      current_user_teamleader?
+  end
+
+  def current_user_teamleader?
+    return_boolean = false
+    Project.find(params[:id]).teams.all.where(role: 'teamleader').each do |team|
+      return_boolean = true if team.user_id == current_user.id
+    end
+    return_boolean
   end
 end

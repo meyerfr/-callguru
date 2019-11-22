@@ -1,7 +1,7 @@
 <% if current_user.user? %>
   <div class="section-show-wrapper">
     <div class="section-show-container">
-      <h3>Section Name<%= @section.name %></h3>
+      <h3><%= @section.name %></h3>
       <p><%= simple_format(strip_tags(@section.scripts.first.text)) %></p>
       <% if @next_section.present? %>
         <%= link_to 'Next', section_path(@next_section), class: 'callguru-button btn section-button-position next-section-button' %>
