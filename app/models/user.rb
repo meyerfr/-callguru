@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   belongs_to :company
-  # has_many :projects, through: :teams
+  has_many :teams
+  has_many :projects, through: :teams
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :session_limitable, :invitable, :database_authenticatable,
