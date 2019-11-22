@@ -15,10 +15,10 @@ class ApplicationController < ActionController::Base
       current_user.role == 'superadmin'
   end
 
-  def authenticate_user!
-    redirect_to root_path, alert: "You don´t have permission for this page" unless
-      current_user.role == 'user'
-  end
+  # def authenticate_user!
+  #   redirect_to root_path, alert: "You don´t have permission for this page" unless
+  #     current_user.role == 'user'
+  # end
 
   def check_sign_in!
     redirect_to new_user_session_path, alert: "You have to LogIn first" unless
@@ -41,6 +41,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource)
     new_user_session_path
+  end
+
+  def after_invite_path_for(resource)
+    company_users_path(current_user.company)
   end
 
   def handle_unverified_request
