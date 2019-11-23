@@ -1,5 +1,4 @@
 class Project < ApplicationRecord
-  belongs_to :user
   has_many :teams
   has_many :users, through: :teams
   has_many :stages, dependent: :destroy
