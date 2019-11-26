@@ -26,8 +26,13 @@
         font-weight: 500;
         margin: 0;
         font-style: italic;
+        color: black;
       }
       p{margin: 0;}
+      a{
+        color: black;
+        width: -webkit-fill-available;
+      }
     }
     .link-to-project:hover{
       text-decoration: none;

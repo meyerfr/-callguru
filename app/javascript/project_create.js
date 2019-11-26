@@ -9,7 +9,22 @@ const hideProjectFormAndCreateScript = (event) => {
 
 function creatingProject() {
   const nextStepButton = document.querySelector('.next-step');
-  if (nextStepButton) nextStepButton.addEventListener('click', hideProjectFormAndCreateScript);
+  const createProjectButton = document.querySelector('.project-button');
+  if (nextStepButton){
+    var submitButtonClicked = false;
+    nextStepButton.addEventListener('click', hideProjectFormAndCreateScript);
+    createProjectButton.addEventListener('click', function(){
+      submitButtonClicked = true;
+    })
+    window.onbeforeunload = e => {
+      console.log(submitButtonClicked)
+      if (!submitButtonClicked) {
+        var dialogText = 'Do you really want to leave this site?';
+        e.returnValue = dialogText;
+        return dialogText;
+      }
+    };
+  }
 }
 
 export { creatingProject }

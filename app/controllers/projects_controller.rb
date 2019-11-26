@@ -20,7 +20,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(projects_params)
-    @project.user_id = params[:user_id]
     if @project.save!
       Team.create(user_id: current_user.id, project_id: @project.id, role: 'teamleader')
       redirect_to user_projects_path(current_user)
