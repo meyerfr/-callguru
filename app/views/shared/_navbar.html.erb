@@ -3,13 +3,13 @@
     <%= render 'shared/side_navbar' %>
   <% else %>
     <div class="navbar navbar-expand navbar-light callguru-navbar-agent">
-      <%= link_to root_path, class: "callguru-brand" do %>
+      <%= link_to user_projects_path(current_user), class: "callguru-brand" do %>
         <%= image_tag "callguru_logo.png" %>
       <% end %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to "Projects", root_path, class: "nav-link d-none d-sm-block" %>
+            <%= link_to "Projects", user_projects_path(current_user), class: "nav-link d-none d-sm-block" %>
           </li>
           <!-- <li class="nav-item">
             <%#= link_to "Messages", "#", class: "nav-link d-none d-sm-block" %>

@@ -39,10 +39,12 @@ function addOrDeleteSideNavbar() {
   const sideNavbar = document.querySelector('.callguru-navbar');
   const noSideNavbar = document.querySelector('.no-side-navbar');
   if (sideNavbar && noSideNavbar) {
-    sideNavbar.classList.add('d-none')
+    const noSideNavbarParent = noSideNavbar.parentElement
+    sideNavbar.classList.add('d-none');
+    if (noSideNavbarParent.classList.contains('padding-navbar')) noSideNavbarParent.classList.add('no-padding-left');
   } else if (sideNavbar) {
     if (sideNavbar.classList.contains('d-none')) {
-      sideNavbar.classList.remove('d-none')
+      sideNavbar.classList.remove('d-none');
     }
   };
 }

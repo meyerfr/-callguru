@@ -19,7 +19,6 @@
   </tbody>
 </table>
 
-
 <%= simple_form_for(User.new, url: user_invitation_path) do |f| %>
   <%= f.input :email, placeholder: 'Email', label: false %>
   <%= f.submit 'Invite User', class: 'btn callguru-button' %>
