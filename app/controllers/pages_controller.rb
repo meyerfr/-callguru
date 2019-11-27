@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:home]
   # skip_before_action :check_sign_in!
+  layout 'landingpage', only: [:home]
   def home
   end
 
@@ -14,7 +15,7 @@ class PagesController < ApplicationController
     elsif user.signed_in_as == 'admin'
       user.update!(signed_in_as: 'user')
     end
-    redirect_to :root
+    redirect_to user_projects_path(current_user)
   end
 
   def blueprint

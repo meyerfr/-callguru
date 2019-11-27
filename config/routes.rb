@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'projects#index'
+  root to: 'pages#home'
   get 'pages/setting'
   # get '/patients/:id', to: 'patients#show', as: 'patient'
   get 'pages/change_sign_in_as/:user_id', to: 'pages#change_sign_in_as', as: 'change_sign_in_as'

@@ -1,4 +1,69 @@
-<h1>Landing Page</h1>
-<p>Get interest of the companies</p>
-<%= link_to 'Interested?', new_company_path %>
+<div class="landingpage-wrapper">
+  <div class="landingpage-section header">
+    <div class="company-form-wrapper">
+      <h1>Your all-in-one sales assistant</h1>
+      <h3>Make every rookie to a professional and experienced agent on day one.</h3>
+      <%= simple_form_for(Company.new) do |f| %>
+        <%= f.input :email, placeholder: 'E-Mail', required: false, label: false %>
+        <%= f.submit 'Get started', class: 'btn callguru-button company-create-button' %>
+      <% end %>
+      <p class="opacity">Free, smooth & easy signup</p>
+    </div>
+    <div class="picture">
+      <%= image_tag 'https://res.cloudinary.com/codefritz/image/upload/v1574851687/icons8-team-r-enAOPw8Rs-unsplash_cxi4di.jpg' %>
+    </div>
+  </div>
+  <div class="landingpage-section">
+    <div class="content">
+      <h2>Let Callguru guide your perfect call.</h2>
+      <p>Always stay on track. Callguru smoothly leady you through calls without loosing the flow.</p>
+      <button class="callguru-button">Set up your callassistant</button>
+    </div>
+    <div class="picture">
+      <%= image_tag 'https://res.cloudinary.com/codefritz/image/upload/v1574851687/icons8-team-r-enAOPw8Rs-unsplash_cxi4di.jpg' %>
+    </div>
+  </div>
+  <div class="landingpage-section">
+    <div class="content">
+      <h2>Personalized projects and talking tracks</h2>
+      <p>No matter how experienced you are – having the perfect pitch available for every persona and pain point increases the likelihood of success by a factor of 10.
+      Callguru onboards and coaches anyone in real-time by leading you smoothly through every call and talk tracks.</p>
+    </div>
+    <div class="picture">
+      <%= image_tag 'https://res.cloudinary.com/codefritz/image/upload/v1574851687/icons8-team-r-enAOPw8Rs-unsplash_cxi4di.jpg' %>
+    </div>
+  </div>
+  <div class="landingpage-section">
+    <div class="content">
+      <h2>Everyone can handle any sales objections</h2>
+      <p>Your customer asks a tough question only an experienced sales rep would have a great answer to? Or you have to pitch a feature against a specific competitor in the live demo?
+      Handle sales objections or critical questions with quick shortcuts to every answer to enable anyone master the most challenging customer conversations.</p>
+    </div>
+    <div class="picture">
+      <%= image_tag 'https://res.cloudinary.com/codefritz/image/upload/v1574851687/icons8-team-r-enAOPw8Rs-unsplash_cxi4di.jpg' %>
+    </div>
+  </div>
+  <div class="landingpage-section">
+    <div class="content">
+      <h2>Keeping track of every call in the easiest way</h2>
+      <p>Improve your calls by keeping track of all of them. Analysing every objection, every dropout and of course every sale is the first step of improvement and scaling.</p>
+    </div>
+    <div class="picture">
+      <%= image_tag 'https://res.cloudinary.com/codefritz/image/upload/v1574851687/icons8-team-r-enAOPw8Rs-unsplash_cxi4di.jpg' %>
+    </div>
+  </div>
+  <div class="landingpage-section">
+    <div class="content">
+      <h2>In meeting note taking and CRM logging</h2>
+      <p>Automate documentation and CRM logging with in-meeting note taking and field sync.
+      Callguru integrates with all popular CRM tools.</p>
+    </div>
+    <div class="picture">
+      <%= image_tag 'https://res.cloudinary.com/codefritz/image/upload/v1574851687/icons8-team-r-enAOPw8Rs-unsplash_cxi4di.jpg' %>
+    </div>
+  </div>
+  <div class="landingpage-section">
+    <h2>Perform better demos, onboard customers faster, automate manual tasks and scale your team.</h2>
+  </div>
+</div>
 

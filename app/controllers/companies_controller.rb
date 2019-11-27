@@ -14,9 +14,12 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(companies_params)
     if @company.save
-      redirect_to companies
+      User.invite!(email: @company.email, company_id: @company.id)
+      flash[:alert] = "An invitation email has been sent to #{@company.email}."
+      redirect_to :root
     else
-      render :new
+      flash[:alert] = "Oops, something wrent wrong. Please try it again."
+      redirect_to :root
     end
   end
 
@@ -45,6 +48,6 @@ class CompaniesController < ApplicationController
   private
 
   def companies_params
-    params.require(:company).permit(:name, :city)
+    params.require(:company).permit(:name, :city, :email)
   end
 end

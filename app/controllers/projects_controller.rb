@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
   end
 
   def check_teamleader!
-    redirect_to root_path, alert: "Please contact the admin of the project for editing" unless
+    redirect_to user_projects_path(current_user), alert: "Please contact the admin of the project for editing" unless
       current_user_teamleader?
   end
 

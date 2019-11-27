@@ -1,0 +1,39 @@
+<div class="landingpage-footer-wrapper">
+  <div class="footer-section contact">
+    <p class="header">Contact</p>
+    <%= link_to 'EU: +49(0)80 00000000', "tel: +498000000000", class: "phone" %>
+    <%= mail_to 'contact@callguru.de' %>
+    <div class="social-media-links">
+      <%= link_to '<i class="fab fa-instagram"></i>'.html_safe, '#' %>
+      <%= link_to '<i class="fab fa-facebook-square"></i>'.html_safe, '#' %>
+      <%= link_to '<i class="fab fa-twitter-square"></i>'.html_safe, '#' %>
+      <%= link_to '<i class="fab fa-linkedin"></i>'.html_safe, '#' %>
+    </div>
+  </div>
+  <div class="footer-section platform">
+    <p class="header">Plattform</p>
+    <%= link_to 'Assistant', '#' %>
+    <%= link_to 'Pricing', '#' %>
+    <%= link_to 'Security', '#' %>
+  </div>
+  <div class="footer-section topics">
+    <p class="header">Topics</p>
+    <%= link_to 'Onboarding', '#' %>
+    <%= link_to 'Support', '#' %>
+    <%= link_to 'Comparison', '#' %>
+    <%= link_to 'Integration', '#' %>
+  </div>
+  <div class="footer-section company">
+    <p class="header">Company</p>
+    <%= link_to 'About', '#' %>
+    <%= link_to 'Jobs', '#' %>
+    <%= link_to 'Blog', '#' %>
+  </div>
+  <div class="footer-section get-started">
+    <p class="header">Get started</p>
+    <%= link_to 'Login', new_user_session_path %>
+    <%= link_to 'Get access', '#' %>
+    <%= link_to 'Request a Demo', '#' %>
+    <%= link_to 'Support', '#' %>
+  </div>
+</div>
