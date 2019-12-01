@@ -1,10 +1,10 @@
 <% if user_signed_in? && current_user.user? %>
   <div class="footer-wrapper">
-    <%= link_to blueprint_path(project), class: 'footer-icon active' do %>
+    <%= link_to blueprint_path(project, call), class: 'footer-icon active' do %>
       <div class="circle"></div>
       <p>Blueprint</p>
     <% end %>
-    <%= link_to '#', class: 'footer-icon' do %>
+    <%= link_to section_show_path(@call.last_section, @call), class: 'footer-icon' do %>
       <div class="circle"></div>
       <p>Script</p>
     <% end %>
