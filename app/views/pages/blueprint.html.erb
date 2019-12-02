@@ -9,12 +9,12 @@
       <% @project.stages.each do |stage| %>
         <div class="project-card">
           <div class="d-flex justify-content-between align-items-center">
-            <%= link_to stage.name, section_path(stage.sections.first) %>
+            <%= link_to stage.name, section_show_path(stage.sections.first, @call) %>
             <div class="circle"></div>
           </div>
           <% stage.sections.each do |section| %>
             <div class="d-flex justify-content-between align-items-center">
-              <%= link_to section.name, section_path(section), class: 'text' %>
+              <%= link_to section.name, section_show_path(section, @call), class: 'text' %>
               <div class="circle"></div>
             </div>
           <% end %>
