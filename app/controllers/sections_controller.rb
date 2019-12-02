@@ -7,6 +7,8 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     @stage = @section.stage
     @project = @stage.project
+    @call = Call.find(params[:call_id])
+    @call.update(last_section: @section.id)
     # @project = Project.find(@stage.project_id)
     @next_section = @section.next
     @next_section = @stage.next.sections.first if @next_section.nil? && !@stage.next.nil?
@@ -35,7 +37,7 @@ class SectionsController < ApplicationController
   def update
     @section = Section.find(params[:id])
     if @section.update(sections_params)
-      redirect_to @section
+      redirect_to section_show(@section)
     else
       render :edit
     end

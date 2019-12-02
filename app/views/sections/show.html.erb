@@ -4,10 +4,10 @@
       <h3><%= @section.name %></h3>
       <p><%= simple_format(strip_tags(@section.scripts.first.text)) %></p>
       <% if @next_section.present? %>
-        <%= link_to 'Next', section_path(@next_section), class: 'callguru-button btn section-button-position next-section-button' %>
+        <%= link_to 'Next', section_show_path(@next_section, @call), class: 'callguru-button btn section-button-position next-section-button' %>
       <% end %>
       <% if @prev_section.present? %>
-        <%= link_to 'Back', section_path(@prev_section), class: 'callguru-button btn section-button-position prev-section-button' %>
+        <%= link_to 'Back', section_show_path(@prev_section, @call), class: 'callguru-button btn section-button-position prev-section-button' %>
       <% end %>
       <%= link_to 'End Call', '#', class: 'callguru-button end-call-button btn' %>
     </div>
@@ -15,5 +15,5 @@
   <div class="features-wrapper">
     <p style="opacity: 0.4;">This is the features field, where the manager can add different kinds of shortcuts for his/her agent.</p>
   </div>
-  <%= render 'shared/footer', project: @project %>
+  <%= render 'shared/footer', project: @project, call: @call %>
 <% end %>

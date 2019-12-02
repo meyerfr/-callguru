@@ -20,5 +20,6 @@ class PagesController < ApplicationController
 
   def blueprint
     @project = Project.find(params[:project_id])
+    @call = Call.find(params[:call_id])
   end
 end

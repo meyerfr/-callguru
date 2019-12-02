@@ -21,7 +21,8 @@
       <% @projects.each do |project| %>
         <% if project.stages.length > 0 %>
           <% if project.stages.last.sections.length > 0 %>
-            <%= link_to section_path(project.stages.first.sections.first), class: 'link-to-project' do %>
+            <% team = Team.where(user_id: current_user.id, project_id: project.id).first %>
+            <%= link_to team_calls_path(team.id), method: :post, class: 'link-to-project' do %>
               <div class="project-card">
                 <%= project.name %>
                 <p class="text">goal: <%= project.goal %></p>
